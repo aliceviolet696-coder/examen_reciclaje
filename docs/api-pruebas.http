@@ -1,0 +1,40 @@
+### Pruebas de la API (REST Client / IntelliJ HTTP Client)
+### Use el botón "Send Request" sobre cada bloque.
+
+@baseUrl = http://localhost:8080/api/puntos
+
+### 1. Listar todos los puntos (GET)
+GET {{baseUrl}}
+Accept: application/json
+
+### 2. Registrar un punto (POST)
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "nombre": "EcoPunto Central",
+  "sector": "Centro Histórico",
+  "material": "Plástico",
+  "capacidad": 250
+}
+
+### 3. Registrar un segundo punto (POST)
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "nombre": "Punto Verde Norte",
+  "sector": "La Carolina",
+  "material": "Vidrio",
+  "capacidad": 180
+}
+
+### 4. Validación: falta el nombre (debe responder 400)
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "sector": "Sin nombre",
+  "material": "Papel",
+  "capacidad": 10
+}

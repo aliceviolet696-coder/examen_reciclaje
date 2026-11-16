@@ -1,0 +1,350 @@
+.aplicacion {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------- Encabezado ---------------------------- */
+.encabezado {
+  background: linear-gradient(135deg, #145c3e 0%, #1d7a52 55%, #2f9d68 100%);
+  color: #ffffff;
+  padding: 2.5rem 1.25rem 2.75rem;
+  box-shadow: 0 12px 30px rgba(20, 92, 62, 0.22);
+}
+
+.encabezado__contenido {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.encabezado__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin-bottom: 0.4rem;
+}
+
+.encabezado h1 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.encabezado__texto {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.encabezado__stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 0.85rem 1.25rem;
+  min-width: 110px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.stat__valor {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stat__texto {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+/* ------------------------------ Contenido ---------------------------- */
+.contenido {
+  width: 100%;
+  max-width: 1180px;
+  margin: -1.5rem auto 0;
+  padding: 0 1.25rem 3rem;
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  flex: 1;
+}
+
+/* ------------------------------ Formulario --------------------------- */
+.formulario {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: 0 10px 30px rgba(30, 60, 45, 0.1);
+  border-top: 4px solid #2f9d68;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 1.25rem;
+}
+
+.formulario h2 {
+  margin-bottom: 0.15rem;
+  color: #145c3e;
+}
+
+.formulario__ayuda {
+  color: #647a70;
+  font-size: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.formulario label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #33473d;
+  margin-bottom: 0.3rem;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #cfdcd5;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 0.95rem;
+  background: #fbfdfc;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #2f9d68;
+  box-shadow: 0 0 0 3px rgba(47, 157, 104, 0.16);
+}
+
+.boton {
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.2rem;
+  background: #1d7a52;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.boton:hover:not(:disabled) {
+  background: #145c3e;
+}
+
+.boton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.boton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.boton--secundario {
+  background: transparent;
+  color: #1d7a52;
+  border: 1px solid #b9d3c6;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.boton--secundario:hover:not(:disabled) {
+  background: #eaf4ef;
+}
+
+/* ------------------------------- Alertas ----------------------------- */
+.alerta {
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.88rem;
+  margin: 0 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.alerta--error {
+  background: #fdecec;
+  color: #a32b2b;
+  border: 1px solid #f3c4c4;
+}
+
+.alerta--ok {
+  background: #e8f7ef;
+  color: #166b44;
+  border: 1px solid #b9e3cd;
+}
+
+/* ------------------------------- Listado ----------------------------- */
+.listado {
+  min-width: 0;
+}
+
+.listado__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.listado__cabecera h2 {
+  margin: 0;
+  color: #145c3e;
+  font-size: 1.35rem;
+}
+
+.estado {
+  background: #ffffff;
+  border: 1px dashed #c4d6cc;
+  border-radius: 14px;
+  padding: 1.4rem;
+  text-align: center;
+  color: #5b7167;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.1rem;
+}
+
+/* -------------------------------- Tarjeta ---------------------------- */
+.tarjeta {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 18px rgba(30, 60, 45, 0.08);
+  border: 1px solid #e2ece7;
+  border-left: 5px solid #2f9d68;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(30, 60, 45, 0.14);
+}
+
+.tarjeta__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.tarjeta__id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7b8f85;
+  letter-spacing: 0.06em;
+}
+
+.tarjeta__material {
+  background: #e8f7ef;
+  color: #166b44;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tarjeta__nombre {
+  font-size: 1.15rem;
+  color: #1c332a;
+  margin-bottom: 0.7rem;
+  line-height: 1.25;
+}
+
+.tarjeta__dato {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  color: #50665b;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tarjeta__capacidad {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid #eef4f0;
+  color: #33473d;
+}
+
+/* --------------------------------- Pie ------------------------------- */
+.pie {
+  text-align: center;
+  padding: 1.2rem;
+  color: #6f8379;
+  font-size: 0.82rem;
+  border-top: 1px solid #e0ebe5;
+  background: #eaf2ed;
+}
+
+/* ------------------------------ Responsive --------------------------- */
+@media (max-width: 900px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    margin-top: -1rem;
+  }
+
+  .formulario {
+    position: static;
+  }
+
+  .encabezado__stats {
+    width: 100%;
+  }
+
+  .stat {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado {
+    padding: 1.8rem 1rem 2.2rem;
+  }
+
+  .contenido {
+    padding: 0 0.9rem 2rem;
+  }
+
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+
+  .listado__cabecera {
+    flex-wrap: wrap;
+  }
+
+  .encabezado__stats {
+    gap: 0.6rem;
+  }
+}

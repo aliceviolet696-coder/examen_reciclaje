@@ -1,0 +1,25 @@
+# Dependencias y artefactos de build
+**/target/
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Variables de entorno y credenciales (NO subir)
+.env
+.env.local
+.env.*.local
+*.pgpass
+pgpass.conf
+
+# Archivo generado por docs/generar-pdf.ps1
+docs/pdf/entrega.html
+
+# IDE / sistema operativo
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
